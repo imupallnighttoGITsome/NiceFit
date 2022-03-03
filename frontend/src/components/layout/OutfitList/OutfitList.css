@@ -1,0 +1,41 @@
+.posts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+}
+.outfit-container {
+  background-color: #faf8f673;
+  border: 2px rgb(245, 243, 243) solid;
+  border-radius: 5px;
+  height: 315px;
+  margin: 15px;
+  padding: 5px 6px;
+  text-align: left;
+  width: 240px;
+}
+.outfit-pic {
+  border: 1px rgb(61, 55, 55) solid;
+  border-radius: 5px;
+  max-height: 250px;
+  margin: 0px 2px;
+  width: 220px;
+}
+
+h5 {
+  color: rgb(39, 39, 39);
+  font-family: "Oswald";
+  margin-left: 5px;
+}
+
+.item-detail-button {
+  background-color: rgb(250, 249, 248);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 35px;
+  margin-left: 75px;
+  width: 130px;
+}

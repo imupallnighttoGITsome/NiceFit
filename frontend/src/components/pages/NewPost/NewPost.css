@@ -1,0 +1,28 @@
+
+body {
+  background-color: #b6b4ac;
+}
+.title {
+    color: rgb(155, 155, 233);
+    text-transform: uppercase;
+    
+}
+.form-style {
+  background-color: rgb(250, 0, 117);
+  border: 1px solid rgb(170, 170, 172);
+  border-radius: 4px;
+  color: rgb(242, 242, 253);
+
+  font-family: "Montserrat";
+  margin: 0 auto;
+  text-transform: uppercase;
+  text-align: center;
+  width: 500px;
+}
+
+.form-control {
+  display: block;
+  font-family: "Montserrat";
+  width: 100%;
+}
+
