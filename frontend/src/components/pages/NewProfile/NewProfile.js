@@ -36,7 +36,7 @@ const NewProfile = () => {
       <Form onSubmit={submitHandler}>
         <Form.Label>Add Profile Image:</Form.Label>
         <br />
-        <Image src="./images/Avatar.jpg" className="profile-pic" />
+        <Image src="../../../../Images/Avatar.jpg" className="profile-pic" />
         <br />
         <input
           type="text"
