@@ -25,9 +25,7 @@ const Dashboard = () => {
             <NavLink to="/nicefit/newpost">
               Post 'Fit
             </NavLink>
-            <NavLink to="/nicefit/deletepost">
-              Get Rid of 'Fit
-            </NavLink>
+   
           </NavDropdown>
           </Nav>
       </Navbar.Brand>

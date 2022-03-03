@@ -3,16 +3,16 @@ body {
   background-color: #b6b4ac;
 }
 .title {
-    color: rgb(155, 155, 233);
+    color: rgb(8, 8, 37);
+    font-size: 36px;
     text-transform: uppercase;
     
 }
 .form-style {
-  background-color: rgb(250, 0, 117);
+  background-color: rgb(230, 141, 125);
   border: 1px solid rgb(170, 170, 172);
   border-radius: 4px;
   color: rgb(242, 242, 253);
-
   font-family: "Montserrat";
   margin: 0 auto;
   text-transform: uppercase;

@@ -11,9 +11,7 @@ const NewPost = () => {
       <Form className="form-style">
         <div className="input-group mb-3">
           <input className="form-control" type="file" id="formFile" />
-          <label for="formFile" className="input-group-text">
-            Add New 'Fit:{" "}
-          </label>
+     
         </div>
 
         <Form.Group controlId="description">
