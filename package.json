@@ -1,0 +1,22 @@
+{
+  "name": "nicefit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imupallnighttoGITsome/NiceFit.git"
+  },
+  "author": "Chloe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imupallnighttoGITsome/NiceFit/issues"
+  },
+  "homepage": "https://github.com/imupallnighttoGITsome/NiceFit#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
