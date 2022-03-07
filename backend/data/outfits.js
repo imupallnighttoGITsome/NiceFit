@@ -1,12 +1,13 @@
-const outfits = [
+export default Outfits = [
     {
-        'id': '1',
-        'hat': 'gucci',
-        'price': 'spensive'
+        id: 1,
+        hat: 'gucci',
+        price: 'spensive'
     },
     {
-        'id': '2',
-        'hat': 'thrift store',
-        'price': 'thrifty'
+        id: 2,
+        hat: 'thrift store',
+        price: 'thrifty'
     }
 ];
+
