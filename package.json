@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon backend/server.js"
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,11 +18,12 @@
   },
   "homepage": "https://github.com/imupallnighttoGITsome/NiceFit#readme",
   "dependencies": {
+    "colors": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "mongodb": "^4.4.1",
-    "mongoose": "^6.2.5",
+    "mongoose": "^6.2.6",
     "nodemon": "^2.0.15"
   }
 }
