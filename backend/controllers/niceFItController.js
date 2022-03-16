@@ -43,6 +43,9 @@ const getProfile = (req, res) => {
 // route : POST /nicefit
 // private
 const addFit = (req, res) => {
+  if(!req.body.text) {
+    res.status(400).json('message: plz add text field')
+  }
   res.status(200).json({ message: "add outfit" });
 };
 
