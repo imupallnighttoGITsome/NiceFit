@@ -17,7 +17,7 @@ const app = express();
 // dotenv.config();
 
 
-app.use('/nicefit', './routes/nicefitroutes.js')
+app.use('/nicefit', require('./routes/niceFitRoutes'))
 
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../build"), (err) => {

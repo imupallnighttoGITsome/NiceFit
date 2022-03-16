@@ -1,21 +1,11 @@
-// const express = require("express");
-// const router = express.Router();
-
 ////////////////---------NEW USER STUFF
 /////
-
-// get profile
-// route : GET /nicefit/:username
-// private
-const getProfile = (req, res) => {
-  res.status(200).json({ message: `my profile: ${req.params.username}`});
-};
 
 // add profile
 // route : POST /nicefit/newuser
 // private
 const addProfile = (req, res) => {
-  res.status(200).json({ message: "add outfit" });
+  res.status(200).json({ message: "add user" });
 };
 
 // update profile
@@ -32,16 +22,21 @@ const deleteProfile = (req, res) => {
   res.status(200).json({ message: `delete profile: ${req.params.username}` });
 };
 
-
-
-////////////////---------MEMBER STUFF
-/////
+// ////////////////---------MEMBER STUFF
+// /////
 
 // get homepage
 // route : GET /nicefit
 // private
 const getHome = (req, res) => {
   res.status(200).json({ message: "home" });
+};
+
+// get profile
+// route : GET /nicefit/user/:id
+// private
+const getProfile = (req, res) => {
+  res.status(200).json({ message: `my profile: ${req.params.id}` });
 };
 
 // add outfit
@@ -65,11 +60,12 @@ const deleteFit = (req, res) => {
   res.status(200).json({ message: `delete outfit: ${req.params.id}` });
 };
 
-
-
-
 module.exports = {
+  addProfile,
   getHome,
+  getProfile,
+  deleteProfile,
+  updateProfile,
   addFit,
   updateFit,
   deleteFit,

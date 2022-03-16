@@ -5,14 +5,12 @@ const {
   addFit,
   updateFit,
   deleteFit,
+  getProfile
 } = require("../controllers/niceFItController");
 
-router.get("/", getHome);
+router.route('/').get(getHome).post(addFit);
+router.route('/:id').put(updateFit).delete(deleteFit);
+router.route('/user/:id').get(getProfile);
 
-router.post("/", addFit);
-
-router.put("/:id", updateFit);
-
-router.delete("/:id", deleteFit);
 
 module.exports = router;
