@@ -5,7 +5,7 @@ const port = process.env.PORT || 5000;
 // const path = require('path');
 // const outfits = require("./seeddata.js");
 
-const apiRouter = require('./routes/controllers');
+// const apiRouter = require('./controllers/controllers');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -17,7 +17,7 @@ const app = express();
 // dotenv.config();
 
 
-app.use('/nicefit', apiRouter)
+app.use('/nicefit', './routes/nicefitroutes.js')
 
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../build"), (err) => {
