@@ -1,22 +1,18 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { getHome } = require('../controllers/niceFItController');
+const {
+  getHome,
+  addFit,
+  updateFit,
+  deleteFit,
+} = require("../controllers/niceFItController");
 
+router.get("/", getHome);
 
-router.get('/', getHome);
+router.post("/", addFit);
 
-  router.post('/', (req, res) => {
-    res.status(200).json({message: 'add outfit'});
-  });
+router.put("/:id", updateFit);
 
-  router.put('/:id', (req, res) => {
-    res.status(200).json({message: `update outfit: ${req.params.id}`});
-  });
+router.delete("/:id", deleteFit);
 
-
-  router.delete('/:id', (req, res) => {
-    res.status(200).json({message: `delete outfit: ${req.params.id}`});
-  });
-
-
-module.exports = router
+module.exports = router;
