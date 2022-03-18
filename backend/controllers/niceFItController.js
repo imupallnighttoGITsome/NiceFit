@@ -1,26 +1,28 @@
+const asyncHandler = require('express-async-handler');
+
 ////////////////---------NEW USER STUFF
 /////
 
 // add profile
 // route : POST /nicefit/newuser
 // private
-const addProfile = (req, res) => {
+const addProfile = asyncHandler(async (req, res) => {
   res.status(200).json({ message: "add user" });
-};
+});
 
 // update profile
 // route : PUT /nicefit/:username
 // private
-const updateProfile = (req, res) => {
+const updateProfile = asyncHandler(async (req, res) => {
   res.status(200).json({ message: `update profile: ${req.params.username}` });
-};
+});
 
 // delete profile
 // route : DELETE /nicefit/:username/:id
 // private
-const deleteProfile = (req, res) => {
+const deleteProfile = asyncHandler(async (req, res) => {
   res.status(200).json({ message: `delete profile: ${req.params.username}` });
-};
+});
 
 // ////////////////---------MEMBER STUFF
 // /////
@@ -28,40 +30,41 @@ const deleteProfile = (req, res) => {
 // get homepage
 // route : GET /nicefit
 // private
-const getHome = (req, res) => {
+const getHome = asyncHandler(async(req, res) => {
   res.status(200).json({ message: "home" });
-};
+});
 
 // get profile
 // route : GET /nicefit/user/:id
 // private
-const getProfile = (req, res) => {
+const getProfile = asyncHandler(async(req, res) => {
   res.status(200).json({ message: `my profile: ${req.params.id}` });
-};
+});
 
 // add outfit
 // route : POST /nicefit
 // private
-const addFit = (req, res) => {
+const addFit = asyncHandler(async(req, res) => {
   if(!req.body.text) {
-    res.status(400).json('message: plz add text field')
+    res.status(400)
+    throw new Error('Please enter text')
   }
   res.status(200).json({ message: "add outfit" });
-};
+});
 
 // update outfit
 // route : PUT /nicefit/:id
 // private
-const updateFit = (req, res) => {
+const updateFit = asyncHandler(async(req, res) => {
   res.status(200).json({ message: `update outfit: ${req.params.id}` });
-};
+});
 
 // delete outfit
 // route : DELETE /nicefit/:id
 // private
-const deleteFit = (req, res) => {
+const deleteFit = asyncHandler(async(req, res) => {
   res.status(200).json({ message: `delete outfit: ${req.params.id}` });
-};
+});
 
 module.exports = {
   addProfile,
