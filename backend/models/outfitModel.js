@@ -2,7 +2,6 @@ const mongoose =  require('mongoose');
 
 const outFitSchema =  mongoose.Schema({
     //hat, glasses, top, bottom, socks, shoes/// all type string //// required: [true, 'Please Add Description']
-
     hat: {
         type: String,
         required: [true, 'Please Add a Description']
@@ -33,4 +32,7 @@ const outFitSchema =  mongoose.Schema({
         required: [true, 'Please Add a Description']
     },
 
-})
+
+});
+
+module.exports = mongoose.model('Outfit', outFitSchema)
