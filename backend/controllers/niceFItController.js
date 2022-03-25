@@ -1,5 +1,7 @@
 const asyncHandler = require('express-async-handler');
 
+const Outfit = require('../models/outfitModel')
+
 ////////////////---------NEW USER STUFF
 /////
 
@@ -31,7 +33,8 @@ const deleteProfile = asyncHandler(async (req, res) => {
 // route : GET /nicefit
 // private
 const getHome = asyncHandler(async(req, res) => {
-  res.status(200).json({ message: "home" });
+  const outfits = await Outfit.find()
+  res.status(200).json(outfits);
 });
 
 // get profile
