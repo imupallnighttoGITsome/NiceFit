@@ -4,14 +4,13 @@ import "./Dashboard.css";
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="nav-container">
 <div className="homebase">
         <NavLink className="btn btn-dark" to="/">Logout</NavLink>
         </div>
       <Navbar variant="dark">
-      
       <Navbar.Brand>
-        NICE 'FIT ------------
+        NICE 'FIT ----------
         <img
           className="smiley"
           src="../../../../Images/Icon.png"

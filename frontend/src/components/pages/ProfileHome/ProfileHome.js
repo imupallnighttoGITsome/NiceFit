@@ -10,7 +10,7 @@ const ProfileHome = () => {
   return (
     <div>
       <Dashboard />
-      <h1>we here</h1>
+      <h1>PROFILE</h1>
     </div>
   );
 };
