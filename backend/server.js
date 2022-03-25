@@ -1,6 +1,8 @@
 const express = require('express');
+const colors = require('colors');
 const dotenv = require('dotenv').config();
-const { errorHandler } =  require('./middleware/errorMiddleware')
+const { errorHandler } =  require('./middleware/errorMiddleware');
+const connectDB = require('./config/conn')
 const port = process.env.PORT || 5000;
 // const cors = require('cors');
 // const path = require('path');
@@ -9,7 +11,7 @@ const port = process.env.PORT || 5000;
 // const apiRouter = require('./controllers/controllers');
 
 // const isProduction = process.env.NODE_ENV === 'production';
-
+connectDB();
 const app = express();
 // app.use(cors());
 app.use(express.json());
