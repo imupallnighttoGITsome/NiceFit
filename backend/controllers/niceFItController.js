@@ -53,15 +53,14 @@ const addFit = asyncHandler(async (req, res) => {
     throw new Error("Please enter text");
   }
   const outfit = await Outfit.create({
-    hat: req.body.hat,
-    glasses: req.body.glasses,
-    top: req.body.top,
-    bottoms: req.body.bottoms,
-    socks: req.body.socks,
-    shoes: req.body.shoes,
+    hat: req.body.text,
+    glasses: req.body.text,
+    top: req.body.text,
+    bottoms: req.body.text,
+    socks: req.body.text,
+    shoes: req.body.text,
     
   });
-  console.log(req.body.text)
   res.status(200).json(outfit);
 });
 
@@ -69,7 +68,13 @@ const addFit = asyncHandler(async (req, res) => {
 // route : PUT /nicefit/:id
 // private
 const updateFit = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: `update outfit: ${req.params.id}` });
+  const outfit = await Outfit.findById(req.params.id)
+  if(!outfit) {
+    res.status(400)
+    throw new Error('outfit not found')
+  }
+  const updatedFit = await Outfit.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  res.status(200).json(updateFit);
 });
 
 // delete outfit
