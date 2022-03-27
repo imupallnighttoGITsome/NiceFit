@@ -59,7 +59,9 @@ const addFit = asyncHandler(async (req, res) => {
     bottoms: req.body.bottoms,
     socks: req.body.socks,
     shoes: req.body.shoes,
+    
   });
+  console.log(req.body.text)
   res.status(200).json(outfit);
 });
 
