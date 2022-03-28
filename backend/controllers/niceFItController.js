@@ -81,7 +81,14 @@ const updateFit = asyncHandler(async (req, res) => {
 // route : DELETE /nicefit/:id
 // private
 const deleteFit = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: `delete outfit: ${req.params.id}` });
+  const outfit = await Outfit.findById(req.params.id)
+  if(!outfit) {
+    res.status(400) 
+    throw new Error('outfit not found')
+  }
+
+  await outfit.remove()
+  res.status(200).json({id: req.params.id});
 });
 
 module.exports = {
