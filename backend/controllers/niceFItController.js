@@ -2,30 +2,6 @@ const asyncHandler = require("express-async-handler");
 
 const Outfit = require("../models/outfitModel");
 
-////////////////---------NEW USER STUFF
-/////
-
-// add profile
-// route : POST /nicefit/newuser
-// private
-const addProfile = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: "add user" });
-});
-
-// update profile
-// route : PUT /nicefit/:username
-// private
-const updateProfile = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: `update profile: ${req.params.username}` });
-});
-
-// delete profile
-// route : DELETE /nicefit/:username/:id
-// private
-const deleteProfile = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: `delete profile: ${req.params.username}` });
-});
-
 // ////////////////---------MEMBER STUFF
 // /////
 
@@ -37,12 +13,15 @@ const getHome = asyncHandler(async (req, res) => {
   res.status(200).json(outfits);
 });
 
-// get profile
-// route : GET /nicefit/user/:id
+
+
+// update profile
+// route : PUT /nicefit/:username
 // private
-const getProfile = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: `my profile: ${req.params.id}` });
+const updateProfile = asyncHandler(async (req, res) => {
+  res.status(200).json({ message: `update profile: ${req.params.username}` });
 });
+
 
 // add outfit
 // route : POST /nicefit
@@ -92,10 +71,7 @@ const deleteFit = asyncHandler(async (req, res) => {
 });
 
 module.exports = {
-  addProfile,
   getHome,
-  getProfile,
-  deleteProfile,
   updateProfile,
   addFit,
   updateFit,

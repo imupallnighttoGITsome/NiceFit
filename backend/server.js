@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 
 
 app.use('/nicefit', require('./routes/niceFitRoutes'))
+app.use('/nicefit/user', require('./routes/userRoutes'))
 
 app.use(errorHandler);
 
