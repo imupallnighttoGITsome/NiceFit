@@ -6,8 +6,10 @@ const {
   getProfile,
 } = require("../controllers/userController");
 
+const {protect} = require('../middleware/authMiddleware')
+
 router.post("/", addProfile);
 router.post("/login", loginUser);
-router.get("/me", getProfile);
+router.get("/me", protect, getProfile);
 
 module.exports = router;

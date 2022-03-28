@@ -7,8 +7,10 @@ const {
   deleteFit,
 } = require("../controllers/niceFItController");
 
-router.route('/').get(getHome).post(addFit);
-router.route('/:id').put(updateFit).delete(deleteFit);
+const { protect } = require('../middleware/authMiddleware')
+
+router.route('/').get(protect, getHome).post(protect, addFit);
+router.route('/:id').put(protect, updateFit).delete(protect, deleteFit);
 
 
 module.exports = router;
