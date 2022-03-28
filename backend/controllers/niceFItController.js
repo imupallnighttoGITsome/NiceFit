@@ -74,7 +74,7 @@ const updateFit = asyncHandler(async (req, res) => {
     throw new Error('outfit not found')
   }
   const updatedFit = await Outfit.findByIdAndUpdate(req.params.id, req.body, {new: true})
-  res.status(200).json(updateFit);
+  res.status(200).json(updatedFit);
 });
 
 // delete outfit
