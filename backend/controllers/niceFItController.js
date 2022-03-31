@@ -9,7 +9,7 @@ const Outfit = require("../models/outfitModel");
 // route : GET /nicefit
 // private
 const getHome = asyncHandler(async (req, res) => {
-  const outfits = await Outfit.find();
+  const outfits = await Outfit.find({user: req.user.id});
   res.status(200).json(outfits);
 });
 
