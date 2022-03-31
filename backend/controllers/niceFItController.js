@@ -1,6 +1,7 @@
 const asyncHandler = require("express-async-handler");
 
 const Outfit = require("../models/outfitModel");
+const User = require('../models/userModel');
 
 // ////////////////---------MEMBER STUFF
 // /////
@@ -52,6 +53,20 @@ const updateFit = asyncHandler(async (req, res) => {
     res.status(400)
     throw new Error('outfit not found')
   }
+
+  const user = await User.findById(req.user.addFit);
+
+  //check for user
+  if(!user) {
+    res.status(401)
+    throw new Error('User Not Found')
+  }
+  //make sure the right person is logged in
+  if(outfit.user.toString() !== user.id) {
+    res.status(401)
+    throw new Error ('User Not Authorized')
+
+  }
   const updatedFit = await Outfit.findByIdAndUpdate(req.params.id, req.body, {new: true})
   res.status(200).json(updatedFit);
 });
@@ -64,6 +79,19 @@ const deleteFit = asyncHandler(async (req, res) => {
   if(!outfit) {
     res.status(400) 
     throw new Error('outfit not found')
+  }
+  const user = await User.findById(req.user.addFit);
+
+  //check for user
+  if(!user) {
+    res.status(401)
+    throw new Error('User Not Found')
+  }
+  //make sure the right person is logged in
+  if(outfit.user.toString() !== user.id) {
+    res.status(401)
+    throw new Error ('User Not Authorized')
+
   }
 
   await outfit.remove()
