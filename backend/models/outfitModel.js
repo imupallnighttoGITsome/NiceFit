@@ -4,33 +4,20 @@ const outFitSchema = mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
+      // required: true,
       ref: "User",
     },
-    //hat, glasses, top, bottom, socks, shoes/// all type string //// required: [true, 'Please Add Description']
-    hat: {
-      type: String,
-    },
+    hat: String,
 
-    glasses: {
-      type: String,
-    },
+    glasses: String,
 
-    top: {
-      type: String,
-    },
+    top: String,
 
-    bottoms: {
-      type: String,
-    },
+    bottoms: String,
 
-    socks: {
-      type: String,
-    },
+    socks: String,
 
-    shoes: {
-      type: String,
-    },
+    shoes: String,
   },
   {
     timestamps: true,

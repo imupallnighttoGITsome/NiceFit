@@ -88,7 +88,7 @@ const getToken = (id) => {
 };
 
 module.exports = {
-  addProfile,
   loginUser,
+  addProfile,
   getProfile,
 };
