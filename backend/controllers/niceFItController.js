@@ -18,11 +18,20 @@ const getHome = asyncHandler(async (req, res) => {
 // route : POST /nicefit
 // private
 const addFit = asyncHandler(async (req, res) => {
-  if (!req.body.text) {
+  if (!req.body) {
     res.status(400);
     throw new Error("Please enter text");
   }
-  const outfit = await Outfit.create(req.body.text);
+  const outfit = await Outfit.create({
+    hat: req.body.hat,
+    glasses: req.body.glasses,
+    top: req.body.top,
+    bottoms: req.body.bottoms,
+    socks: req.body.socks,
+    shoes: req.body.shoes,
+
+    user: req.user.id
+  });
   console.log(outfit)
   res.status(200).json(outfit);
 });
