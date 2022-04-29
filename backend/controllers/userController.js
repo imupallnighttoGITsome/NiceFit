@@ -7,7 +7,7 @@ const { restart } = require("nodemon");
 // add profile
 // route : POST /nicefit/user
 // public
-const addProfile = asyncHandler(async (req, res) => {
+const addUser = asyncHandler(async (req, res) => {
   const { userName, email, password } = req.body;
 
   if (!userName || !email || !password) {
@@ -46,6 +46,10 @@ const addProfile = asyncHandler(async (req, res) => {
     throw new Error("Invalid User");
   }
 });
+
+const createProfile = asyncHandler(async (req, res) => {
+console.log('new user')
+})
 
 //authenticate user
 //route: POST /nicefit/user/login
@@ -89,6 +93,7 @@ const getToken = (id) => {
 
 module.exports = {
   loginUser,
-  addProfile,
+  addUser,
+  createProfile,
   getProfile,
 };
