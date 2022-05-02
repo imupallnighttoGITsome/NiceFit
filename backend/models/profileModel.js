@@ -2,14 +2,11 @@ const mongoose = require("mongoose");
 
 const profileSchema = mongoose.Schema(
   {
-    firstName: {
+    userName: {
         type: String, 
         required: [true, 'Please Add First Name']
     },
-    lastName: {
-        type: String,
-        required: [false]
-    },
+
     profilePic: {
         type: String,
         required: [true, 'Please Add Some Pic']

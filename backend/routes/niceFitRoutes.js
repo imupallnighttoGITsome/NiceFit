@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const {
   getHome,
+  getProfile,
   addFit,
   updateFit,
   deleteFit,
@@ -9,7 +10,7 @@ const {
 
 const { protect } = require('../middleware/authMiddleware')
 
-router.route('/').get(protect, getHome).post(protect, addFit);
+router.route('/').get(protect, getHome, getProfile).post(protect, addFit);
 router.route('/:id').put(protect, updateFit).delete(protect, deleteFit);
 
 

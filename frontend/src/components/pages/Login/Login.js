@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
+  console.log('worked')
   return (
     <div>
       <NavbarBrand>

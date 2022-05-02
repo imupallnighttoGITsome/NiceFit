@@ -2,6 +2,7 @@ const asyncHandler = require("express-async-handler");
 
 const Outfit = require("../models/outfitModel");
 const User = require("../models/userModel");
+const Profile = require('../models/profileModel');
 
 // ////////////////---------MEMBER STUFF
 // /////
@@ -89,6 +90,25 @@ const deleteFit = asyncHandler(async (req, res) => {
   await outfit.remove();
   res.status(200).json({ id: req.params.id });
 });
+// find profile
+// route : GET /nicefit/user/me
+// private
+const getProfile = asyncHandler(async (req, res) => {
+  const {_id, userName, profilePic, height, bust, waist, hips, shoeSize} = await Profile.findById(req.params.id) 
+
+  res.status(200).json({
+    id: _id,
+    userName,
+    profilePic,
+    height,
+    bust,
+    waist,
+    hips,
+    shoeSize
+
+  })
+
+});
 
 // update profile
 // route : PUT /nicefit/:username
@@ -99,6 +119,7 @@ const updateProfile = asyncHandler(async (req, res) => {
 
 module.exports = {
   getHome,
+  getProfile,
   updateProfile,
   addFit,
   updateFit,

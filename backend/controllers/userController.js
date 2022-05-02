@@ -2,7 +2,6 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
-const { restart } = require("nodemon");
 
 // add profile
 // route : POST /nicefit/user
@@ -72,19 +71,7 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new Error("Invalid User");
   }
 });
-// find profile
-// route : GET /nicefit/user/me
-// private
-const getProfile = asyncHandler(async (req, res) => {
-  const {_id, userName, email} = await User.findById(req.user.id) 
 
-  res.status(200).json({
-    id: _id,
-    userName,
-    email
-  })
-
-});
 
 //generate token
 const getToken = (id) => {
@@ -94,6 +81,5 @@ const getToken = (id) => {
 module.exports = {
   loginUser,
   addUser,
-  createProfile,
-  getProfile,
+  createProfile
 };

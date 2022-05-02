@@ -22,7 +22,6 @@ const NewProfile = () => {
   const newProfileHandler = (event) => {
     setProfile({ ...profile, [event.target.id]: event.target.value });
   };
-
   const submitHandler = (event) => {
     event.preventDefault();
     console.log(profile);
