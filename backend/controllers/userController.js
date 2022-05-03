@@ -72,6 +72,18 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 });
 
+// get user info
+// route GET /nicefit/user/me
+
+const getMe = asyncHandler(async (req, res) => {
+  const {_id, userName, email} = await User.findById(req.user.id)
+
+  res.status(200).json({
+    id: _id,
+    userName,
+    email
+  })
+})
 
 //generate token
 const getToken = (id) => {
@@ -81,5 +93,6 @@ const getToken = (id) => {
 module.exports = {
   loginUser,
   addUser,
-  createProfile
+  createProfile,
+  getMe
 };

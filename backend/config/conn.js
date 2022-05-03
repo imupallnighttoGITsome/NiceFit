@@ -16,7 +16,7 @@ const connectDB = async () =>  {
   //   useUnifiedTopology: true,
   //   useFindAndModify: false,
   // })
-  // .then((instance) =>
+  //.then((instance) =>
   //   console.log(`connected to db: ${instance.connections[0].name}`.cyan.underline)
   // )
   catch (error) {

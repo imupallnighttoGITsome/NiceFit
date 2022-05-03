@@ -11,7 +11,8 @@ const {
 const { protect } = require('../middleware/authMiddleware')
 
 router.route('/').get(protect, getHome).post(protect, addFit);
-router.route('/:id').get(protect, getProfile).put(protect, updateFit).delete(protect, deleteFit);
+router.route('/:id').put(protect, updateFit).delete(protect, deleteFit);
+router.route('/profile').get(protect, getProfile);
 
 
 module.exports = router;

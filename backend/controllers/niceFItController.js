@@ -91,10 +91,10 @@ const deleteFit = asyncHandler(async (req, res) => {
   res.status(200).json({ id: req.params.id });
 });
 // find profile
-// route : GET /nicefit/user/me
+// route : GET /nicefit/user/profile
 // private
 const getProfile = asyncHandler(async (req, res) => {
-  const {_id, userName, profilePic, height, bust, waist, hips, shoeSize} = await Profile.findById(req.params.id) 
+  const profile = await Profile.find({ user: req.user.id})
 
   res.status(200).json({
     id: _id,
